@@ -8,10 +8,11 @@
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
         {% if request.user.is_authenticated %}
-        <li class="nav-item"><a href="#" class="nav-link">Welcome {{request.user.username}}</a></li>
-        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link active" aria-current="page">Logout</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Welcome {{request.user.email}}</a></li>
+        <li class="nav-item"><a href="{% url 'account_logout' %}" class="nav-link active" aria-current="page">Logout</a></li>
         {% else %}
-        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link active" aria-current="page">Login</a></li>
+        <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link active" aria-current="page">Signup</a></li>
+        <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link active" aria-current="page">Login</a></li>
         {% endif %}
     </ul>
     </header>
