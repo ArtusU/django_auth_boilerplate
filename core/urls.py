@@ -9,8 +9,8 @@ from accounts.views import Index
 urlpatterns = [
     path('', Index.as_view()),
     path('admin/', admin.site.urls),
-    # path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
